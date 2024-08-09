@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian Gadget Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input[type="radio"] {
+            margin-right: 5px;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+        }
+        .radio-group input[type="radio"] {
+            margin-right: 10px;
+        }
+        .radio-group label {
+            margin-right: 20px;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button, input[type="submit"], input[type="reset"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #218838;
+        }
+        .invoice {
+            text-align: left;
+        }
+        .thank-you {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+        .thank-you a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .thank-you a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        const prices = {
+            Samsung: {
+                'Samsung A05': 1999000,
+                'Samsung A15 5G': 2699000,
+                'Samsung A35 5G': 4999000,
+                'Samsung A54 5G': 5999000,
+                'Samsung S24 Ultra': 21999000
+            },
+            Apple: {
+                'Iphone 11': 6249000,
+                'Iphone 12': 7999000,
+                'Iphone 13': 10249000,
+                'Iphone 14 Pro': 15999000,
+                'Iphone 15 Pro Max': 22999000
+            },
+            Xiaomi: {
+                'Redmi A3': 1199000,
+                'Redmi 12': 1799000,
+                'Redmi 13C': 1899000,
+                'Redmi Note 12 Pro': 3799000,
+                'Redmi Note 13 Pro+': 5999000
+            },
+            Oppo: {
+                'Oppo A38': 1799000,
+                'Oppo A60': 2599000,
+                'Oppo A98': 4299000,
+                'Oppo Reno 11 Pro': 8999000,
+                'Oppo Find N3 Flip': 14499000
+            },
+            Vivo: {
+                'Vivo Y03': 1499000,
+                'Vivo Y22': 2199000,
+                'Vivo Y100': 3899000,
+                'Vivo V29': 5999000,
+                'Vivo V30': 6199000
+            }
+        };
+
+        function updateOptions() {
+            const product = document.getElementById('product').value;
+            const samsungOptions = document.getElementById('samsung-options');
+            const appleOptions = document.getElementById('apple-options');
+            const xiaomiOptions = document.getElementById('xiaomi-options');
+            const oppoOptions = document.getElementById('oppo-options');
+            const vivoOptions = document.getElementById('vivo-options');
+            const priceDisplay = document.getElementById('price');
+
+            samsungOptions.style.display = 'none';
+            appleOptions.style.display = 'none';
+            xiaomiOptions.style.display = 'none';
+            oppoOptions.style.display = 'none';
+            vivoOptions.style.display = 'none';
+
+            if (product === 'Samsung') {
+                samsungOptions.style.display = 'block';
+            } else if (product === 'Apple') {
+                appleOptions.style.display = 'block';
+            } else if (product === 'Xiaomi') {
+                xiaomiOptions.style.display = 'block';
+            } else if (product === 'Oppo') {
+                oppoOptions.style.display = 'block';
+            } else if (product === 'Vivo') {
+                vivoOptions.style.display = 'block';
+            }
+
+            updatePrice();
+        }
+
+        function updatePrice() {
+            const product = document.getElementById('product').value;
+            const options = document.querySelector(`#${product.toLowerCase()}-options select`);
+            const selectedOption = options ? options.value : '';
+            const priceDisplay = document.getElementById('price');
+
+            if (product && selectedOption) {
+                const price = prices[product][selectedOption] || 0;
+                priceDisplay.textContent = `Harga: Rp ${price.toLocaleString()}`;
+            } else {
+                priceDisplay.textContent = 'Harga: Rp 0';
+            }
+        }
+
+        function showInvoice(event) {
+            event.preventDefault();
+
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const nomor = document.getElementById('nomor').value;
+            const product = document.getElementById('product').value;
+            const samsung = document.getElementById('samsung').value;
+            const apple = document.getElementById('apple').value;
+            const xiaomi = document.getElementById('xiaomi').value;
+            const oppo = document.getElementById('oppo').value;
+            const vivo = document.getElementById('vivo').value;
+            const bayar = document.getElementById('bayar').value;
+            const kirim = document.querySelector('input[name="kirim"]:checked')?.value || 'Tidak Dipilih';
+            const alamat = document.getElementById('alamat').value;
+            const price = document.getElementById('price').textContent;
+
+            let itemMerek = '';
+            if (product === 'Samsung') {
+                itemMerek = samsung;
+            } else if (product === 'Apple') {
+                itemMerek = apple;
+            } else if (product === 'Xiaomi') {
+                itemMerek = xiaomi;
+            } else if (product === 'Oppo') {
+                itemMerek = oppo;
+            } else if (product === 'Vivo') {
+                itemMerek = vivo;
+            }
+
+            const invoiceHTML = `
+                <div class="container invoice">
+                    <h2><b>Invoice Pembelian</b></h2>
+                    <p><b>Nama:</b> ${nama}</p>
+                    <p><b>E-Mail:</b> ${email}</p>
+                    <p><b>Nomor Telepon:</b> ${nomor}</p>
+                    <p><b>Barang:</b> ${product}</p>
+                    <p><b>Merek:</b> ${itemMerek}</p>
+                    <p><b>Metode Pembayaran:</b> ${bayar}</p>
+                    <p><b>Opsi Pengiriman:</b> ${kirim}</p>
+                    <p><b>Alamat Detail:</b> ${alamat}</p>
+                    <p>${price}</p>
+                    <div class="thank-you">
+                        <p>Terima kasih atas pembelian Anda!</p>
+                        <p><a href="index.html">Kembali ke Produk</a></p>
+                    </div>
+                </div>
+            `;
+
+            document.body.innerHTML = invoiceHTML;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2><b>Form Pembelian Gadget Store</b></h2>
+        <form onsubmit="showInvoice(event)">
+            <div class="form-group">
+                <label for="nama">Nama Anda</label>
+                <input type="text" id="nama" name="nama" size="30" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="text" id="email" name="email" size="30" required>
+            </div>
+            <div class="form-group">
+                <label for="nomor">Nomor Telepon</label>
+                <input type="text" id="nomor" name="nomor" size="30" required>
+            </div>
+            <div class="form-group">
+                <label for="product">Pilih Barang yang akan dibeli</label>
+                <select id="product" name="product" onchange="updateOptions()" required>
+                    <option value="">--Pilih Barang--</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Oppo">Oppo</option>
+                    <option value="Vivo">Vivo</option>
+                </select>
+            </div>
+            <div class="form-group" id="samsung-options" style="display: none;">
+                <label for="samsung">Pilih Jenis Merek Samsung</label>
+                <select id="samsung" name="samsung" onchange="updatePrice()">
+                    <option value="">--Pilih Jenis Merek--</option>
+                    <option value="Samsung A05">Samsung A05</option>
+                    <option value="Samsung A15 5G">Samsung A15 5G</option>
+                    <option value="Samsung A35 5G">Samsung A35 5G</option>
+                    <option value="Samsung A54 5G">Samsung A54 5G</option>
+                    <option value="Samsung S24 Ultra">Samsung S24 Ultra</option>
+                </select>
+            </div>
+            <div class="form-group" id="apple-options" style="display: none;">
+                <label for="apple">Pilih Jenis Merek Apple</label>
+                <select id="apple" name="apple" onchange="updatePrice()">
+                    <option value="">--Pilih Jenis Merek--</option>
+                    <option value="Iphone 11">Iphone 11</option>
+                    <option value="Iphone 12">Iphone 12</option>
+                    <option value="Iphone 13">Iphone 13</option>
+                    <option value="Iphone 14 Pro">Iphone 14 Pro</option>
+                    <option value="Iphone 15 Pro Max">Iphone 15 Pro Max</option>
+                </select>
+            </div>
+            <div class="form-group" id="xiaomi-options" style="display: none;">
+                <label for="xiaomi">Pilih Jenis Merek Xiaomi</label>
+                <select id="xiaomi" name="xiaomi" onchange="updatePrice()">
+                    <option value="">--Pilih Jenis Merek--</option>
+                    <option value="Redmi A3">Redmi A3</option>
+                    <option value="Redmi 12">Redmi 12</option>
+                    <option value="Redmi 13C">Redmi 13C</option>
+                    <option value="Redmi Note 12 Pro">Redmi Note 12 Pro</option>
+                    <option value="Redmi Note 13 Pro+">Redmi Note 13 Pro+</option>
+                </select>
+            </div>
+            <div class="form-group" id="oppo-options" style="display: none;">
+                <label for="oppo">Pilih Jenis Merek Oppo</label>
+                <select id="oppo" name="oppo" onchange="updatePrice()">
+                    <option value="">--Pilih Jenis Merek--</option>
+                    <option value="Oppo A38">Oppo A38</option>
+                    <option value="Oppo A60">Oppo A60</option>
+                    <option value="Oppo A98">Oppo A98</option>
+                    <option value="Oppo Reno 11 Pro">Oppo Reno 11 Pro</option>
+                    <option value="Oppo Find N3 Flip">Oppo Find N3 Flip</option>
+                </select>
+            </div>
+            <div class="form-group" id="vivo-options" style="display: none;">
+                <label for="vivo">Pilih Jenis Merek Vivo</label>
+                <select id="vivo" name="vivo" onchange="updatePrice()">
+                    <option value="">--Pilih Jenis Merek--</option>
+                    <option value="Vivo Y03">Vivo Y03</option>
+                    <option value="Vivo Y22">Vivo Y22</option>
+                    <option value="Vivo Y100">Vivo Y100</option>
+                    <option value="Vivo V29">Vivo V29</option>
+                    <option value="Vivo V30">Vivo V30</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bayar">Metode Pembayaran</label>
+                <select id="bayar" name="bayar" required>
+                    <option value="">--Pilih Metode Pembayaran--</option>
+                    <option value="Dana">Dana</option>
+                    <option value="ShopeePay">ShopeePay</option>
+                    <option value="BRI">BRI</option>
+                    <option value="BNI">BNI</option>
+                    <option value="BCA">BCA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Opsi Pengiriman</label>
+                <div class="radio-group">
+                    <input type="radio" id="reguler" name="kirim" value="Reguler">
+                    <label for="reguler">Reguler</label>
+                    <input type="radio" id="kargo" name="kirim" value="Kargo">
+                    <label for="kargo">Kargo</label>
+                    <input type="radio" id="instant" name="kirim" value="Instant">
+                    <label for="instant">Instant</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat Detail</label>
+                <textarea id="alamat" name="alamat" cols="40" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <p id="price">Harga: Rp 0</p>
+            </div>
+            <div class="form-actions">
+                <input type="submit" value="Kirim">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

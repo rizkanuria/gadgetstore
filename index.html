@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GADGET STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>GADGET STORE</h1>
+        <marquee direction="right">Hanya di GADGET STORE</marquee>
+        <marquee direction="left">Aman dan Terpercaya</marquee>
+    </div>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="index.html">Product</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+    <table width="100%" height="100%" cellspacing="0" cellpadding="0">
+        <tr valign="top">
+            <td width="20%" class="sidebar">
+                <h3>Temukan Produk Terbaikmu</h3>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search..." onkeyup="searchProducts()">
+                </div>
+                <div class="popular-products" id="product-list">
+                    <h2>Popular Products</h2>
+                    <div class="product">
+                        <span class="product-ranking">#1</span>
+                        <img src="SAMSUNG S24 ULTRA.png" alt="Samsung S24 Ultra">
+                        <a href="#" onclick="showDetails('SAMSUNG S24 ULTRA.png', 'Samsung S24 Ultra', 'Memori: 256GB, RAM: 12GB', 'Rp 21.999.000')">Samsung S24 Ultra</a>
+                    </div>
+                    <div class="product">
+                        <span class="product-ranking">#2</span>
+                        <img src="Iphone 15 Pro Max.png" alt="iPhone 15 Pro Max">
+                        <a href="#" onclick="showDetails('Iphone 15 Pro Max.png', 'iPhone 15 Pro Max', 'Memori: 256GB, RAM: 8GB', 'Rp 22.999.000')">iPhone 15 Pro Max</a>
+                    </div>
+                    <div class="product">
+                        <span class="product-ranking">#3</span>
+                        <img src="SAMSUNG A54.png" alt="Samsung A54 5G">
+                        <a href="#" onclick="showDetails('SAMSUNG A54.png', 'Samsung A54 5G', 'Memori: 256GB, RAM: 8GB', 'Rp 5.999.000')">Samsung A54 5G</a>
+                    </div>
+                    <div class="product">
+                        <span class="product-ranking">#4</span>
+                        <img src="Iphone 13.png" alt="iPhone 13">
+                        <a href="#" onclick="showDetails('Iphone 13.png', 'iPhone 13', 'Memori: 128GB, RAM: 4GB', 'Rp 10.249.000')">iPhone 13</a>
+                    </div>
+                    <div class="product">
+                        <span class="product-ranking">#5</span>
+                        <img src="Iphone 11.png" alt="iPhone 11">
+                        <a href="#" onclick="showDetails('Iphone 11.png', 'iPhone 11', 'Memori: 64GB, RAM: 4GB', 'Rp 6.249.000')">iPhone 11</a>
+                    </div>
+                </div>
+            </td>
+            <td width="80%" bgcolor="#FFFFCC" align="center">
+                <div id="content">
+                    <table cellspacing="10" cellpadding="0" class="product-table">
+                        <tr>
+                            <td align="center" class="product-item">
+                                <img src="SAMSUNG A05.png" alt="Samsung A05" width="150">
+                                <p class="product-info">Samsung A05<br>Memori: 128GB, RAM: 6GB<br><b>Rp 1.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('SAMSUNG A05.png', 'Samsung A05', '128GB, RAM 6GB', 'Rp 1.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="SAMSUNG A15.png" alt="Samsung A15 5G" width="150">
+                                <p class="product-info">Samsung A15 5G<br>Memori: 128GB, RAM: 8GB<br><b>Rp 2.699.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('SAMSUNG A15.png', 'Samsung A15 5G', '128GB, RAM 8GB', 'Rp 2.699.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="SAMSUNG A35.png" alt="Samsung A35 5G" width="150">
+                                <p class="product-info">Samsung A35 5G<br>Memori: 256GB, RAM: 8GB<br><b>Rp 4.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('SAMSUNG A35.png', 'Samsung A35 5G', '256GB, RAM 8GB', 'Rp 4.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="SAMSUNG A54.png" alt="Samsung A54 5G" width="150">
+                                <p class="product-info">Samsung A54 5G<br>Memori: 256GB, RAM: 8GB<br><b>Rp 5.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('SAMSUNG A54.png', 'Samsung A54 5G', '256GB, RAM 8GB', 'Rp 5.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="SAMSUNG S24 ULTRA.png" alt="Samsung S24 Ultra" width="150">
+                                <p class="product-info">Samsung S24 Ultra<br>Memori: 256GB, RAM: 12GB<br><b>Rp 21.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('SAMSUNG S24 ULTRA.png', 'Samsung S24 Ultra', '256GB, RAM 12GB', 'Rp 21.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellspacing="10" cellpadding="0" class="product-table">
+                        <tr>
+                            <td align="center" class="product-item">
+                                <img src="Iphone 11.png" alt="Iphone 11" width="150">
+                                <p class="product-info">Iphone 11<br>Memori: 64GB, RAM: 4GB<br><b>Rp 6.249.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Iphone 11.png', 'Iphone 11', '64GB, RAM 4GB', 'Rp 6.249.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Iphone 12.png" alt="Iphone 12" width="150">
+                                <p class="product-info">Iphone 12<br>Memori: 128GB, RAM: 4GB<br><b>Rp 7.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Iphone 12.png', 'Iphone 12', '128GB, RAM 4GB', 'Rp 7.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Iphone 13.png" alt="Iphone 13" width="150">
+                                <p class="product-info">Iphone 13<br>Memori: 128GB, RAM: 4GB<br><b>Rp 10.249.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Iphone 13.png', 'Iphone 13', '128GB, RAM 4GB', 'Rp 10.249.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Iphone 14 Pro.png" alt="Iphone 14 Pro" width="150">
+                                <p class="product-info">Iphone 14 Pro<br>Memori: 128GB, RAM: 6GB<br><b>Rp 15.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Iphone 14 Pro.png', 'Iphone 14 Pro', '128GB, RAM 6GB', 'Rp 15.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Iphone 15 Pro Max.png" alt="Iphone 15 Pro Max" width="150">
+                                <p class="product-info">Iphone 15 Pro Max<br>Memori: 256GB, RAM: 8GB<br><b>Rp 22.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Iphone 15 Pro Max.png', 'Iphone 15 Pro Max', '256GB, RAM 8GB', 'Rp 22.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellspacing="10" cellpadding="0" class="product-table">
+                        <tr>
+                            <td align="center" class="product-item">
+                                <img src="Redmi A3.png" alt="Redmi A3" width="150">
+                                <p class="product-info">Redmi A3<br>Memori: 128GB, RAM: 4GB<br><b>Rp 1.199.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Redmi A3.png', 'Redmi A3', '128GB, RAM 4GB', 'Rp 1.199.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Redmi 12.png" alt="Redmi 12" width="150">
+                                <p class="product-info">Redmi 12<br>Memori: 128GB, RAM: 8GB<br><b>Rp 1.799.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Redmi 12.png', 'Redmi 12', '128GB, RAM 8GB', 'Rp 1.799.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Redmi 13C.png" alt="Redmi 13C" width="150">
+                                <p class="product-info">Redmi 13C<br>Memori: 256GB, RAM: 8GB<br><b>Rp 1.899.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Redmi 13C.png', 'Redmi 13C', '256GB, RAM 8GB', 'Rp 1.899.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Redmi Note 12 Pro.png" alt="Redmi Note 12 Pro" width="150">
+                                <p class="product-info">Redmi Note 12 Pro 4G<br>Memori: 256GB, RAM: 8GB<br><b>Rp 3.799.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Redmi Note 12 Pro.png', 'Redmi Note 12 Pro', '256GB, RAM 8GB', 'Rp 3.799.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Redmi Note 13 Pro+.png" alt="Redmi Note 13 Pro Plus" width="150">
+                                <p class="product-info">Redmi Note 13 Pro Plus<br>Memori: 512GB, RAM: 12GB<br><b>Rp 5.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Redmi Note 13 Pro+.png', 'Redmi Note 13 Pro Plus', '512GB, RAM 12GB', 'Rp 5.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellspacing="10" cellpadding="0" class="product-table">
+                        <tr>
+                            <td align="center" class="product-item">
+                                <img src="Oppo A38.png" alt="Oppo A38" width="150">
+                                <p class="product-info">Oppo A38<br>Memori: 128GB, RAM: 4GB<br><b>Rp 1.799.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Oppo A38.png', 'Oppo A38', '128GB, RAM 4GB', 'Rp 1.799.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Oppo A60.png" alt="Oppo A60" width="150">
+                                <p class="product-info">Oppo A60<br>Memori: 128GB, RAM: 8GB<br><b>Rp 2.599.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Oppo A60.png', 'Oppo A60', '128GB, RAM 8GB', 'Rp 2.599.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Oppo A98.png" alt="Oppo A98" width="150">
+                                <p class="product-info">Oppo A98 5G<br>Memori: 256GB, RAM: 8GB<br><b>Rp 4.299.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Oppo A98.png', 'Oppo A98 5G', '256GB, RAM 8GB', 'Rp 4.299.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Oppo Reno 11 Pro.png" alt="Oppo Reno 11 Pro" width="150">
+                                <p class="product-info">Oppo Reno 11 Pro 5G<br>Memori: 512GB, RAM: 12GB<br><b>Rp 8.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Oppo Reno 11 Pro.png', 'Oppo Reno 11 Pro 5G', '512GB, RAM 12GB', 'Rp 8.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Oppo Find N3 Flip.png" alt="Oppo Find N3 Flip" width="150">
+                                <p class="product-info">Oppo Find N3 Flip<br>Memori: 256GB, RAM: 12GB<br><b>Rp 14.499.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Oppo Find N3 Flip.png', 'Oppo Find N3 Flip', '256GB, RAM 12GB', 'Rp 14.499.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellspacing="10" cellpadding="0" class="product-table">
+                        <tr>
+                            <td align="center" class="product-item">
+                                <img src="Vivo Y03.png" alt="Vivo Y03" width="150">
+                                <p class="product-info">Vivo Y03<br>Memori: 128GB, RAM: 4GB<br><b>Rp 1.499.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Vivo Y03.png', 'Vivo Y03', '128GB, RAM 4GB', 'Rp 1.499.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Vivo Y22.png" alt="Vivo Y22" width="150">
+                                <p class="product-info">Vivo Y22<br>Memori: 128GB, RAM: 6GB<br><b>Rp 2.199.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Vivo Y22.png', 'Vivo Y22', '128GB, RAM 6GB', 'Rp 2.199.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Vivo Y100.png" alt="Vivo Y100" width="150">
+                                <p class="product-info">Vivo Y100 5G<br>Memori: 128GB, RAM: 8GB<br><b>Rp 3.899.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Vivo Y100.png', 'Vivo Y100 5G', '128GB, RAM 8GB', 'Rp 3.899.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Vivo V29.png" alt="Vivo V29" width="150">
+                                <p class="product-info">Vivo V29 5G<br>Memori: 256GB, RAM: 8GB<br><b>Rp 5.999.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Vivo V29.png', 'Vivo V29 5G', '256GB, RAM 8GB', 'Rp 5.999.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                            <td align="center" class="product-item">
+                                <img src="Vivo V30.png" alt="Vivo V30" width="150">
+                                <p class="product-info">Vivo V30 5G<br>Memori: 256GB, RAM: 8GB<br><b>Rp 6.199.000</b></p>
+                                <div class="btn-container">
+                                    <a href="transaksi.html"><button class="btn">Beli Sekarang</button></a>
+                                    <button class="btn" onclick="showDetails('Vivo V30.png', 'Vivo V30 5G', '256GB, RAM 8GB', 'Rp 6.199.000')">Lihat Rincian</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center" bgcolor="#444444">
+                <font color="white"><p>&copy; 2024 Gadget Store</p></font>
+            </td>
+        </tr>
+    </table>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Product Image">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p>
+        </div>
+    </div>
+
+    <script>
+        function showDetails(image, title, description, price) {
+            document.getElementById('modal-image').src = image;
+            document.getElementById('modal-image').alt = title;
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-description').textContent = description;
+            document.getElementById('modal-price').textContent = price;
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+
+        function searchProducts() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const products = document.getElementsByClassName('product-item');
+            for (let i = 0; i < products.length; i++) {
+                const product = products[i];
+                const productName = product.textContent.toLowerCase();
+                if (productName.includes(input)) {
+                    product.style.display = '';
+                } else {
+                    product.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
